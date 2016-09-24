@@ -3,7 +3,7 @@
 	\author João Victor de Souza Poletti 150132425
 	\date 23/09/2016
 
-*/
+*/	
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
