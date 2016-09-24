@@ -81,5 +81,16 @@ int retorna_n_arabico(const char *get_roman)
 				return -1;
 		}
 	}
-	return 1;
+	maior_simbolo_indice = 0; // guarda o indice do maior simbolo no vetor_contador.
+	/*
+	Acha-se o índice do maior símbolo da string digitada pelo usuário.
+	*/
+	for(i = 1;i < strlen(get_roman);i++)
+	{
+		if(vetor_contador[i] > vetor_contador[maior_simbolo_indice])
+		{
+			maior_simbolo_indice = i;
+		}
+	}
+	return maior_simbolo_indice;
 }
