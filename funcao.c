@@ -133,7 +133,8 @@ int checa_existencia_roman(const char *get_roman, int *vetor_contador, int *veto
 	/*
 	Este for checa a frequência de cada caracter, respeitado o número máximo de vezes que ele pode aparecer, tendo em mente o range
 	de 1 até 3000.
-	*/	
+	*/
+		
 	for(i = 0;i < strlen(get_roman);i = i + 2)
 	{
 		if(vetor_frequencia[i] > 3 && i!=2 && i!=4) // os caracteres I, M aparecem, no máximo, até 3 vezes
@@ -145,4 +146,34 @@ int checa_existencia_roman(const char *get_roman, int *vetor_contador, int *veto
 			return 0;
 		}
 	}
+
+	if(vetor_frequencia[2] == 4 && strlen(get_roman) == 4)// se o X apareceu 4 vezes e o tamanho da string é 4
+			return 0;
+		if(vetor_frequencia[4] == 4 && strlen(get_roman) == 4)// se o C apareceu 4 vezes e o tamanho da string é 4
+			return 0;	
+		/*
+		Caso o índice do maior símbolo estiver além do índice 1 da string, esta é, portanto, inválida.
+		*/
+		if(maior_simbolo_indice > 1)
+			return 0;
+		
+		/*
+		Este for visa a checagem da ideia de que, em qualquer caracter da string, a partir do segundo caracter anterior a ele
+		(se 'i' é o índice atual, a partir de 'i-2') só devem existir caracteres maiores ou iguais a ele.
+		Caso tenha caracteres menores, a string é inválida.
+		*/
+		for(i=2;i<strlen(get_roman);i++)
+		{
+			for(j = i-2;j > 0; j--)
+			{
+				if(vetor_contador[i] > vetor_contador[j])
+				{
+					return 0;
+				}
+			}
+		}
+
+		if(maior_simbolo_indice > 0)
+			if(vetor_contador[maior_simbolo_indice] == vetor_contador[maior_simbolo_indice + 1])	
+				return 0;
 }
