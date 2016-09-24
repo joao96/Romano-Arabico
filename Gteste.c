@@ -69,6 +69,23 @@ TEST(retorna_n_arabico, CENTENAS)
 
 }
 
+/**
+ \brief Função da biblioteca "gtest.h" que será usada como ferramenta para automatizar os testes de MILHARES.
+*/
+TEST(retorna_n_arabico, MILHARES)
+{
+	EXPECT_EQ(2000,retorna_n_arabico("MM")); // Dada a entrada "MM", espera-se obter o retorno de 905.
+	EXPECT_EQ(1500,retorna_n_arabico("MD")); // Dada a entrada "MD", espera-se obter o retorno de 905.
+	EXPECT_EQ(1537,retorna_n_arabico("MDXXXVII")); // Dada a entrada "MDXXXVII", espera-se obter o retorno de 905.
+	EXPECT_EQ(1343,retorna_n_arabico("MCCCXLIII")); // Dada a entrada "MCCCXLIII", espera-se obter o retorno de 905.
+	EXPECT_EQ(1492,retorna_n_arabico("MCDXCII")); // Dada a entrada "MCDXCII", espera-se obter o retorno de 905.
+	EXPECT_EQ(2335,retorna_n_arabico("MMCCCXXXV")); // Dada a entrada "MMCCCXXXV", espera-se obter o retorno de 905.
+	EXPECT_EQ(2549,retorna_n_arabico("MMDXLIX")); // Dada a entrada "MMDXLIX", espera-se obter o retorno de 905.
+	EXPECT_EQ(2772,retorna_n_arabico("MMDCCLXXII")); // Dada a entrada "MMDCCLXXII", espera-se obter o retorno de 905.
+	EXPECT_EQ(2913,retorna_n_arabico("MMCMXIII")); // Dada a entrada "MMCMXIII", espera-se obter o retorno de 905.
+
+}
+
 TEST(checa_existencia_romanTESTE, Invalidez)
 {
 
