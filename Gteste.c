@@ -51,6 +51,24 @@ TEST(retorna_n_arabico, DEZENAS_2)
 
 }
 
+/**
+ \brief Função da biblioteca "gtest.h" que será usada como ferramenta para automatizar os testes das CENTENAS.
+*/
+TEST(retorna_n_arabico, CENTENAS)
+{
+
+	EXPECT_EQ(414,retorna_n_arabico("CDXIV")); // Dada a entrada "CDXIV", espera-se obter o retorno de 414.
+	EXPECT_EQ(148,retorna_n_arabico("CXLVIII")); // Dada a entrada "CXLVIII", espera-se obter o retorno de 148.
+	EXPECT_EQ(188,retorna_n_arabico("CLXXXVIII")); // Dada a entrada "CLXXXVIII", espera-se obter o retorno de 188.
+	EXPECT_EQ(394,retorna_n_arabico("CCCXCIV")); // Dada a entrada "CCCXCIV", espera-se obter o retorno de 394.
+	EXPECT_EQ(468,retorna_n_arabico("CDLXVIII")); // Dada a entrada "CDLXVIII", espera-se obter o retorno de 468.
+	EXPECT_EQ(584,retorna_n_arabico("DLXXXIV")); // Dada a entrada "DLXXXIV", espera-se obter o retorno de 584.
+	EXPECT_EQ(971,retorna_n_arabico("CMLXXI")); // Dada a entrada "DLXXXIV", espera-se obter o retorno de 971.
+	EXPECT_EQ(896,retorna_n_arabico("DCCCXCVI")); // Dada a entrada "DLXXXIV", espera-se obter o retorno de 896.
+	EXPECT_EQ(905,retorna_n_arabico("CMV")); // Dada a entrada "DLXXXIV", espera-se obter o retorno de 905.
+
+}
+
 TEST(checa_existencia_romanTESTE, Invalidez)
 {
 
